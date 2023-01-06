@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -46,7 +45,7 @@ public class SpiderController : MonoBehaviour
         
         if (agent.velocity.magnitude > 0.1f)
         {
-            goalRotation = Quaternion.LookRotation(agent.velocity.normalized, Vector3.up);
+            goalRotation = Quaternion.LookRotation(agent.velocity.normalized, gameObject.transform.up);
         }
         
         BodyPivot.transform.rotation = Quaternion.Lerp(BodyPivot.transform.rotation, goalRotation, Time.deltaTime * rotationSpeed);
